@@ -31,28 +31,68 @@ class VisibleTasksWidgetProvider : AppWidgetProvider() {
                 // Task 1
                 if (task1Title?.isNotEmpty() == true) {
                     setTextViewText(R.id.widget_task_1_title, task1Title)
-                    setInt(R.id.widget_task_1_title, "setPaintFlags", if (task1Done) Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG else Paint.ANTI_ALIAS_FLAG)
-                    setViewVisibility(R.id.widget_task_1_title, View.VISIBLE)
+                    
+                    // Update text style for completed tasks
+                    if (task1Done) {
+                        setInt(R.id.widget_task_1_title, "setPaintFlags", Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG)
+                        setInt(R.id.widget_task_1_title, "setTextColor", context.getColor(R.color.secondary_text))
+                        setViewBackgroundResource(R.id.task_1_indicator, R.drawable.task_indicator_done)
+                    } else {
+                        setInt(R.id.widget_task_1_title, "setPaintFlags", Paint.ANTI_ALIAS_FLAG)
+                        setInt(R.id.widget_task_1_title, "setTextColor", context.getColor(R.color.primary_text))
+                        setViewBackgroundResource(R.id.task_1_indicator, R.drawable.task_indicator)
+                    }
+                    
+                    setViewVisibility(R.id.task_1_container, View.VISIBLE)
                 } else {
-                    setViewVisibility(R.id.widget_task_1_title, View.GONE)
+                    setViewVisibility(R.id.task_1_container, View.GONE)
                 }
 
                 // Task 2
                 if (task2Title?.isNotEmpty() == true) {
                     setTextViewText(R.id.widget_task_2_title, task2Title)
-                    setInt(R.id.widget_task_2_title, "setPaintFlags", if (task2Done) Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG else Paint.ANTI_ALIAS_FLAG)
-                    setViewVisibility(R.id.widget_task_2_title, View.VISIBLE)
+                    
+                    // Update text style for completed tasks
+                    if (task2Done) {
+                        setInt(R.id.widget_task_2_title, "setPaintFlags", Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG)
+                        setInt(R.id.widget_task_2_title, "setTextColor", context.getColor(R.color.secondary_text))
+                        setViewBackgroundResource(R.id.task_2_indicator, R.drawable.task_indicator_done)
+                    } else {
+                        setInt(R.id.widget_task_2_title, "setPaintFlags", Paint.ANTI_ALIAS_FLAG)
+                        setInt(R.id.widget_task_2_title, "setTextColor", context.getColor(R.color.primary_text))
+                        setViewBackgroundResource(R.id.task_2_indicator, R.drawable.task_indicator)
+                    }
+                    
+                    setViewVisibility(R.id.task_2_container, View.VISIBLE)
                 } else {
-                    setViewVisibility(R.id.widget_task_2_title, View.GONE)
+                    setViewVisibility(R.id.task_2_container, View.GONE)
                 }
 
                 // Task 3
                 if (task3Title?.isNotEmpty() == true) {
                     setTextViewText(R.id.widget_task_3_title, task3Title)
-                    setInt(R.id.widget_task_3_title, "setPaintFlags", if (task3Done) Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG else Paint.ANTI_ALIAS_FLAG)
-                    setViewVisibility(R.id.widget_task_3_title, View.VISIBLE)
+                    
+                    // Update text style for completed tasks
+                    if (task3Done) {
+                        setInt(R.id.widget_task_3_title, "setPaintFlags", Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG)
+                        setInt(R.id.widget_task_3_title, "setTextColor", context.getColor(R.color.secondary_text))
+                        setViewBackgroundResource(R.id.task_3_indicator, R.drawable.task_indicator_done)
+                    } else {
+                        setInt(R.id.widget_task_3_title, "setPaintFlags", Paint.ANTI_ALIAS_FLAG)
+                        setInt(R.id.widget_task_3_title, "setTextColor", context.getColor(R.color.primary_text))
+                        setViewBackgroundResource(R.id.task_3_indicator, R.drawable.task_indicator)
+                    }
+                    
+                    setViewVisibility(R.id.task_3_container, View.VISIBLE)
                 } else {
-                    setViewVisibility(R.id.widget_task_3_title, View.GONE)
+                    setViewVisibility(R.id.task_3_container, View.GONE)
+                }
+                
+                // If no tasks are present, show a message
+                if (task1Title?.isEmpty() == true && task2Title?.isEmpty() == true && task3Title?.isEmpty() == true) {
+                    setTextViewText(R.id.widget_title, "No Tasks")
+                } else {
+                    setTextViewText(R.id.widget_title, "InYourFace")
                 }
                 
                 // Update Time

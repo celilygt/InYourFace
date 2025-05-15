@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Theme Colors -->
+    <color name="primary_purple">@color/dark_primary_purple</color>
+    <color name="secondary_purple">@color/dark_secondary_purple</color>
+    <color name="primary_text">#FFFFFF</color>
+    <color name="secondary_text">#BBBBBB</color>
+    <color name="white">@color/card_background</color>
+    <color name="light_grey">@color/dark_background</color>
+    <color name="success_green">@color/dark_success_green</color>
+    <color name="accent_blue">@color/dark_accent_blue</color>
+    <color name="warning_orange">@color/dark_warning_orange</color>
+    <color name="error_red">@color/dark_error_red</color>
+</resources> 
