@@ -172,7 +172,7 @@ in_your_face/
 1. Make sure you have Flutter installed and set up
 2. Clone the repository
 3. Run `flutter pub get` to install dependencies
-4. Run `flutter build apk` for an Android build
+4. Run `flutter build apk` for an Android build or `flutter build ios` for an iOS build
 
 ### Testing the Widget
 For widget testing:
