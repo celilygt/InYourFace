@@ -76,3 +76,9 @@ app.*.map.json
 **/macos/Flutter/Flutter-Debug.xcconfig
 **/macos/Flutter/Flutter-Release.xcconfig
 **/macos/Flutter/Flutter-Profile.xcconfig
+
+# Exclude platforms other than Android and iOS
+/linux/
+/web/
+/windows/
+/macos/

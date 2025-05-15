@@ -1,0 +1,6 @@
+# Mark platform directories other than Android and iOS as vendored
+# This will exclude them from GitHub's language statistics
+linux/** linguist-vendored
+web/** linguist-vendored
+windows/** linguist-vendored
+macos/** linguist-vendored 
