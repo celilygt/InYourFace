@@ -9,6 +9,7 @@ InYourFace is a task management app designed to make your important tasks highly
 ## Table of Contents
 
 - [Current Features](#current-features)
+- [Recent Updates](#recent-updates)
 - [Planned Features](#planned-features)
 - [Technical Implementation](#technical-implementation)
 - [Installation](#installation)
@@ -39,9 +40,26 @@ InYourFace is a task management app designed to make your important tasks highly
 - Launching the app when tapping on the widget
 
 ### UI/UX
-- Dark theme for better visibility and reduced eye strain
+- Comprehensive theming with light and dark modes
 - Clean, minimalist interface focused on your tasks
 - Smooth animations for task interactions
+
+## Recent Updates
+
+### Android Widget Fixes
+- Fixed color resource references in dark theme for the Android widget
+- Added missing dark theme color resources:
+  - `dark_success_green`
+  - `dark_accent_blue`
+  - `dark_warning_orange`
+  - `dark_error_red`
+- Fixed widget layout update method to use proper RemoteViews API
+- Corrected background setting with proper `setInt` method for task indicators
+- Improved widget compatibility across Android versions
+
+### UI Improvements
+- Enhanced theme consistency between the app and widget
+- Improved visual feedback for task completion in the widget
 
 ## Planned Features
 
@@ -94,6 +112,7 @@ InYourFace is a task management app designed to make your important tasks highly
 - Material Design UI components with custom styling
 - State management using Flutter's built-in StatefulWidget
 - Task data model with JSON serialization/deserialization
+- Comprehensive theming with both light and dark modes
 
 ### Data Storage
 - `shared_preferences` for local data persistence
@@ -104,6 +123,7 @@ InYourFace is a task management app designed to make your important tasks highly
 - `home_widget` Flutter plugin for Flutter-to-Widget communication
 - Custom widget layout with dynamic content
 - Widget refresh via app interaction
+- Theme-aware design that adapts to device theme settings
 
 ## Installation
 
@@ -163,6 +183,8 @@ in_your_face/
 │     ├─ res/
 │        ├─ drawable/       # Drawable resources
 │        ├─ layout/         # Widget layouts
+│        ├─ values/         # Color and style resources
+│        ├─ values-night/   # Dark theme resources
 │        ├─ xml/            # Widget configuration
 ├─ ios/                     # iOS-specific code
 ├─ test/                    # Test directory
@@ -179,6 +201,11 @@ For widget testing:
 1. Build and install the app (`flutter run`)
 2. Add the widget to your home screen
 3. Create, complete, and delete tasks in the app to see the widget update
+
+### Common Issues and Fixes
+- **Resource Not Found Errors**: Make sure all color resources are defined in both values/colors.xml and properly referenced in values-night/colors.xml
+- **Widget Not Updating**: Ensure the `HomeWidget.updateWidget()` method is called after every task change
+- **Kotlin Compilation Errors**: Use proper RemoteViews API methods for setting backgrounds and other view properties
 
 ## License
 
