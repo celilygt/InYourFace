@@ -36,11 +36,11 @@ class VisibleTasksWidgetProvider : AppWidgetProvider() {
                     if (task1Done) {
                         setInt(R.id.widget_task_1_title, "setPaintFlags", Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG)
                         setInt(R.id.widget_task_1_title, "setTextColor", context.getColor(R.color.secondary_text))
-                        setViewBackgroundResource(R.id.task_1_indicator, R.drawable.task_indicator_done)
+                        setInt(R.id.task_1_indicator, "setBackgroundResource", R.drawable.task_indicator_done)
                     } else {
                         setInt(R.id.widget_task_1_title, "setPaintFlags", Paint.ANTI_ALIAS_FLAG)
                         setInt(R.id.widget_task_1_title, "setTextColor", context.getColor(R.color.primary_text))
-                        setViewBackgroundResource(R.id.task_1_indicator, R.drawable.task_indicator)
+                        setInt(R.id.task_1_indicator, "setBackgroundResource", R.drawable.task_indicator)
                     }
                     
                     setViewVisibility(R.id.task_1_container, View.VISIBLE)
@@ -56,11 +56,11 @@ class VisibleTasksWidgetProvider : AppWidgetProvider() {
                     if (task2Done) {
                         setInt(R.id.widget_task_2_title, "setPaintFlags", Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG)
                         setInt(R.id.widget_task_2_title, "setTextColor", context.getColor(R.color.secondary_text))
-                        setViewBackgroundResource(R.id.task_2_indicator, R.drawable.task_indicator_done)
+                        setInt(R.id.task_2_indicator, "setBackgroundResource", R.drawable.task_indicator_done)
                     } else {
                         setInt(R.id.widget_task_2_title, "setPaintFlags", Paint.ANTI_ALIAS_FLAG)
                         setInt(R.id.widget_task_2_title, "setTextColor", context.getColor(R.color.primary_text))
-                        setViewBackgroundResource(R.id.task_2_indicator, R.drawable.task_indicator)
+                        setInt(R.id.task_2_indicator, "setBackgroundResource", R.drawable.task_indicator)
                     }
                     
                     setViewVisibility(R.id.task_2_container, View.VISIBLE)
@@ -76,11 +76,11 @@ class VisibleTasksWidgetProvider : AppWidgetProvider() {
                     if (task3Done) {
                         setInt(R.id.widget_task_3_title, "setPaintFlags", Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG)
                         setInt(R.id.widget_task_3_title, "setTextColor", context.getColor(R.color.secondary_text))
-                        setViewBackgroundResource(R.id.task_3_indicator, R.drawable.task_indicator_done)
+                        setInt(R.id.task_3_indicator, "setBackgroundResource", R.drawable.task_indicator_done)
                     } else {
                         setInt(R.id.widget_task_3_title, "setPaintFlags", Paint.ANTI_ALIAS_FLAG)
                         setInt(R.id.widget_task_3_title, "setTextColor", context.getColor(R.color.primary_text))
-                        setViewBackgroundResource(R.id.task_3_indicator, R.drawable.task_indicator)
+                        setInt(R.id.task_3_indicator, "setBackgroundResource", R.drawable.task_indicator)
                     }
                     
                     setViewVisibility(R.id.task_3_container, View.VISIBLE)
